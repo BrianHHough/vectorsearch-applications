@@ -388,6 +388,10 @@ class WeaviateIndexer:
     
         print(f'Batch job completed in {round(end/60, 2)} minutes.')
         class_info = self._client.show_class_info()
+        print("class_info:", class_info)  # Debug print
+        if isinstance(class_info, str):
+            print("Error:", class_info)
+            return  # Or handle the error as appropriate
         for i, c in enumerate(class_info):
             if c['class'] == class_name:
                 print(class_info[i])
