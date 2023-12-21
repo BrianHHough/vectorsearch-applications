@@ -132,6 +132,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# Data
+/data_1/
+
 # Spyder project settings
 .spyderproject
 .spyproject
