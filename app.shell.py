@@ -32,6 +32,7 @@ data_path = './data/impact_theory_data.json'
 
 ## INDEX NAME
 class_name = 'Impact_theory_minilm_256'
+class_names = [class_name]
 
 ## RETRIEVER
 api_key = os.environ['WEAVIATE_API_KEY']
@@ -40,7 +41,7 @@ url = os.environ['WEAVIATE_ENDPOINT']
 client = WeaviateClient(api_key, url)
 available_classes = client.schema.get(class_name) # client.schema.exists(class_name)
 current_schema = client.schema.get(class_name)
-# print('available_classes:', available_classes)
+print('available_classes:', available_classes)
 # print('current schema:', current_schema)
 
 
@@ -86,7 +87,7 @@ def main():
         temperature_input = st.slider('Temperature of LLM', 0.0, 2.0, 1.0)
 
         class_name = st.selectbox( 'Class Name:',
-                                  options=available_classes,
+                                  options=class_names,
                                   placeholder='Select Class Name from Weaviate')
         
         if class_name == 'Impact_theory_ada_256': 
