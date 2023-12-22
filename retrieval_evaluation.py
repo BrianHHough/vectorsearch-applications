@@ -329,4 +329,3 @@ def add_params(client: WeaviateClient,
 
 
 
-

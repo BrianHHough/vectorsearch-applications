@@ -32,6 +32,9 @@ class ReRanker(CrossEncoder):
                              apply_sigmoid: bool=True,
                              return_scores: bool=False
                              ) -> Union[np.array, None]:
+        if not isinstance(results, list) or not all(isinstance(hit, dict) for hit in results):
+            logger.error(f"Invalid results structure: {results}")
+            return
         '''
         Given a list of hits from a Retriever:
             1. Scores hits by passing query and results through CrossEncoder model. 
@@ -40,6 +43,12 @@ class ReRanker(CrossEncoder):
         '''
         activation_fct = self.activation_fct if apply_sigmoid else None
         #build query/content list
+        cross_inp = []
+        for hit in results:
+            if isinstance(hit, dict) and hit_field in hit:
+                cross_inp.append([query, hit[hit_field]])
+            else:
+                logger.error(f"Invalid hit or missing field '{hit_field}': {hit}")
         cross_inp = [[query, hit[hit_field]] for hit in results]
         #get scores
         cross_scores = self.predict(cross_inp, activation_fct=activation_fct)

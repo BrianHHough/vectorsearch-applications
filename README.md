@@ -41,3 +41,14 @@ WEAVIATE_ENDPOINT= "your Weaviate cluster endpoint"  <--- you will get this on D
 ```
 6. If you've made it this far, you are ready to start the course.  Enjoy the process!
 <img src="assets/getsome.jpg" alt="jocko" width="500" height="auto">
+
+# Streamlit App
+
+Launch the app:
+```bash
+streamlit run app.shell.py
+```
+
+Link to the app running:
+https://opulent-doodle-j7qvgj57rv72p67p-8501.app.github.dev/
+
