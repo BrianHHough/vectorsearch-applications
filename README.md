@@ -40,15 +40,22 @@ WEAVIATE_API_KEY= "your Weaviate cluster API Key"   <--- you will get this on Da
 WEAVIATE_ENDPOINT= "your Weaviate cluster endpoint"  <--- you will get this on Day One of the course
 ```
 6. If you've made it this far, you are ready to start the course.  Enjoy the process!
-<img src="assets/getsome.jpg" alt="jocko" width="500" height="auto">
+<br></br>
+<!-- <img src="assets/getsome.jpg" alt="jocko" width="500" height="auto"> -->
 
-# Streamlit App
+# Final Project: "Chat with the Impact Theory podcast"
 
-Launch the app:
+### Launch the app:
 ```bash
 streamlit run app.shell.py
 ```
 
-Link to the app running:
+### Link to the app running:
 https://opulent-doodle-j7qvgj57rv72p67p-8501.app.github.dev/
 
+### Demo Screenshots:
+![](./assets/Demo_Screenshot1.png)
+![](./assets/Demo_Screenshot2.png)
+![](./assets/Demo_Screenshot3.png)
+
+[📸 Watch a Demo Video](https://vimeo.com/897123237/788b8d8dab?share=copy)
